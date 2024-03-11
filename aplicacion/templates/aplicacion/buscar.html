@@ -1,0 +1,23 @@
+{% extends "aplicacion/index.html" %}
+
+{% block titulo %}
+<section class="page-section bg-primary" id="about">
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-lg-8 text-center">
+                <h2 class="text-white mt-0">Buscador de libros</h2>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock titulo %}
+
+{% block contenido %}
+
+<form action="{% url 'encontrar_libros' %}" method="get" style="max-width: 500px; margin: auto; margin-top: 40px; padding: 20px; border: 1px solid #ccc; border-radius: 5px; background-color: #f9f9f9;">
+    {% csrf_token %}
+    <p>¿Qué libro estás buscando?: <input type="text" name="buscar" id="buscar"></p>
+    <input type="submit" value="Buscar" style="background-color: #4CAF50; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; font-size: 16px;"> 
+</form>
+
+{% endblock contenido %}

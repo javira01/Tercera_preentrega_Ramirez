@@ -1,0 +1,54 @@
+{% extends "aplicacion/index.html" %}
+<!--
+{% block titulo %}
+<section class="page-section bg-primary" id="about">
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-lg-8 text-center">
+                <h2 class="text-white mt-0">Libros</h2>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock titulo %}
+-->
+{% block contenido %}
+
+<section id="libros">
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-10">
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Título</th>
+                            <th scope="col">Año</th>
+                            <th scope="col">ISBN</th>
+                            <th scope="col">Autor</th>
+                            <th scope="col">Género</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for c in libros %}
+                            <tr>
+                                <td>{{ c.id }}</td>
+                                <td>{{ c.titulo }}</td>
+                                <td>{{ c.ano_publicacion }}</td>
+                                <td>{{ c.isbn }}</td>
+                                <td>{{ c.autor.nombre }}</td>
+                                <td>{{ c.genero.nombre }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+</section>
+
+{% endblock contenido %}
